@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, createContext } from 'react';
+import { FirstComp } from './ContextAPI\'S/FirstComp';
+import { SecondComp } from './ContextAPI\'S/SecondComp';
 
-function App() {
+export const store = createContext();
+const App = () => { 
+const[data, setData] = useState([
+  {name:"Apple"},
+  {name:"Vivo"},
+  {name:"One+"},
+  {name:"Samsung"},
+  {name:"Apple"},
+  {name:"Vivo"},
+  {name:"One+"},
+  {name:"Samsung"},
+  {name:"Hello"}
+])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+     <store.Provider value={[data,setData]}>
+      <div className='text-center'>
+        <FirstComp />
+        <SecondComp />
+      </div>
+      
+     </store.Provider>
+    </React.Fragment>
+  )
 }
-
-export default App;
+export default App
