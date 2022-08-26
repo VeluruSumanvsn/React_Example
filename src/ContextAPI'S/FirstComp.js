@@ -17,8 +17,9 @@ export const FirstComp = () => {
             <form onSubmit={submitHandler}>
                 <input type='text' placeholder="Enter the name" onChange={(e) => setContent(e.target.value)} />
                 <input type="submit" value="Add" />
-                <butten>submit</butten>
+                <button>submit</button>
                 <input type='search'/>
+                <input type='button'/>
             </form>
 
         </div>
